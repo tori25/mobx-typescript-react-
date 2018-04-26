@@ -21,10 +21,11 @@ import Tail from './components/tail';
             this.timer = 0;
         }
     }
-//----------------------------------radiostation
+
+//------------------------------------------------------------------------------------------radiostation
 type Listener = (songName: string) => void;
 
-//subject ...издатель
+//subject
 class RadioStation {
     private listeners: Array<Listener> = [];
 
@@ -40,7 +41,6 @@ class RadioStation {
             1000
         );
     }
-
     onPlaySong(radioListener: Listener) {
         this.listeners.push(radioListener);
         return radioListener;
@@ -50,26 +50,22 @@ class RadioStation {
         this.listeners.forEach((listener) => listener(songName));
     }
 
-// not sure that this is the right place for this metod
     onStopSong(listener: Listener) {
         let index = this.listeners.indexOf(listener);
         this.listeners.splice(index, 1);
     }
 }
 
-// TODO: car must be able to turn on & turn off the radio
-
-//observer  ... подписчики
+//observer
 class Car {
     private radioStation: RadioStation = null;
     private carName: string;
-    private radioListener: Listener;//to correct
+    private radioListener: Listener;
 
     constructor(carName: string, radioStation: RadioStation) {
         this.radioStation = radioStation;
         this.carName = carName;
-        // this.radioListener = radioListener;
-    }
+        }
 
     turnOnRadio() {
         this.radioListener = radioStation.onPlaySong((songName: string) => {
@@ -80,29 +76,16 @@ class Car {
         this.radioStation.onStopSong(this.radioListener);
         console.log(`Car: ${this.carName} was turned off`);
     }
-
 }
 
 const radioStation = new RadioStation();
-
 const carRadio1 = new Car('lanos', radioStation);
 carRadio1.turnOnRadio();
-
 
 setTimeout(() => {
     carRadio1.turnOffRadio();
 }, 3000);
-
-// const fn1 = () => 1;
-// const fn2 = () => 1;
-// const fn3 = () => 3;
-// const fn4 = () => 1;
-
-
-// let arr = [fn1, fn4, fn2, fn3];
-
-// console.log(arr.indexOf(fn2));
-//----------------------------------radiostation
+//------------------------------------------------------------------------------------------radiostation
 
 @observer
     class TimerView extends React.Component<{appState: AppState}, {}> {
@@ -112,8 +95,9 @@ setTimeout(() => {
                     <Food />
                     <Tail />
                     <Buttons />
-                    <button onClick={this.onReset}>
-                        Seconds passed: {this.props.appState.timer}
+                    <button className="btn btn-start">Start</button>
+                    <button className="btn btn-start" onClick={this.onReset}>
+                        Start: {this.props.appState.timer}
                     </button>
                     <DevTools />
                 </div>

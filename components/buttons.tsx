@@ -6,23 +6,21 @@ class Buttons extends React.Component {
     constructor (props: any){
         super(props);
     }
-    public handleOnMove(event: any):void {
-        // this.setState({
-        // console.log("kgjfghi");
-        // })
-    }
 
+    public onKeyDown (event: any):void{
+            console.log('click down');
+    }
 
     public render() {
 
         return (<div>
                 <div className="iconsContainer">
                     <button className="btn btn-up"><FaAngleUp /></button>
-                    <button className="btn btn-down"><FaAngleDown /></button>
+                    <button className="btn btn-down" onClick={this.onKeyDown}><FaAngleDown /></button>
                     <button className="btn btn-left"><FaAngleLeft /></button>
                     <button className="btn btn-right"><FaAngleRight /></button>
                 </div>
-                <button className="btn btn-start">Start</button>
+                {/*<button className="btn btn-start">Start</button>*/}
             </div>
 
 
