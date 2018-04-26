@@ -5,7 +5,7 @@ import '../theme/ScreenGameZone.scss'
     fieldHeight: number;
 
 }
-export default class ScreenGameZone extends React.Component<IScreenGameZone, {}>{
+export default class ScreenGameZone extends React.Component<IScreenGameZone, any>{
     constructor(props: IScreenGameZone){
         super(props);
     }

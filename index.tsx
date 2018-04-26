@@ -93,7 +93,7 @@ setTimeout(() => {
             return (
                 <div className="container">
                     <Food />
-                    <Snake />
+                    {/*<Snake />*/}
                     <Buttons />
                     <button className="btn btn-start">Start</button>
                     <button className="btn btn-start" onClick={this.onReset}>
