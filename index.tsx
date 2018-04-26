@@ -6,7 +6,7 @@ import DevTools from 'mobx-react-devtools';
 import './App.css';
 import Buttons from './components/buttons';
 import Food from './components/food';
-import Tail from './components/tail';
+import Snake from './components/snake';
 
     class AppState {
         @observable timer = 0;
@@ -93,7 +93,7 @@ setTimeout(() => {
             return (
                 <div className="container">
                     <Food />
-                    <Tail />
+                    <Snake />
                     <Buttons />
                     <button className="btn btn-start">Start</button>
                     <button className="btn btn-start" onClick={this.onReset}>
