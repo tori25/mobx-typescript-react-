@@ -1,0 +1,83 @@
+.container {
+    position: relative;
+    width: auto;
+    border: 1px dashed blue;
+    height: 350px;
+}
+.iconsContainer {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    bottom: -20%;
+    left: 40%;
+    right: 40%;
+}
+.btn{
+    position: absolute;
+    display: block;
+    background-color: aquamarine;
+    clear:both;
+    border: none;
+    color: green;
+}
+.btn-up {
+    display: block;
+    top:20px;
+    align: center;
+    left: 25px;
+}
+.btn-down {
+    display: block;
+    top: 52px;
+    align: center;
+    left: 25px;
+}
+.btn-right {
+    display: block;
+    top: 35px;
+    align: right;
+    left: 50px;
+}
+.btn-left {
+    top: 35px;
+    align: left;
+
+}
+.btn-start {
+    bottom: -10%;
+    left: 20px;
+
+}
+#circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 10px;
+    top: 30px;
+    left: 50px;
+}
+#tail {
+    width: 100px;
+    height: 10px;
+    position: relative;
+    background: red;
+    top:80px;
+    left: 80px;
+}
+#tail:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+}
+#tail:before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+}
