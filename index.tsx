@@ -3,12 +3,21 @@ import * as ReactDOM from 'react-dom';
 import {observable} from 'mobx';
 import {observer} from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
-import './App.css';
-import Buttons from './components/buttons';
+import Field from './components/Field';
+import ScreenGameZone from './components/ScreenGameZone';
 import Food from './components/food';
 import Snake from './components/snake';
 
-    class AppState {
+interface IAppProps {
+    field: any,
+    food: any,
+    running: boolean,
+    snakePosition: Array<number>,
+    snakeSpeed: number,
+    appState: object
+}
+
+class AppState {
         @observable timer = 0;
 
         constructor() {
@@ -24,19 +33,22 @@ import Snake from './components/snake';
 
 
 @observer
-    class TimerView extends React.Component<{appState: AppState}, {}> {
+export default class App extends React.Component<{appState: AppState}, {}> {
         render() {
             return (
-                <div className="container">
-                    <Food />
-                    {/*<Snake />*/}
-                    <Buttons />
-                    <button className="btn btn-start">Start</button>
-                    <button className="btn btn-start" onClick={this.onReset}>
-                        Start: {this.props.appState.timer}
-                    </button>
-                    <DevTools />
+                <div>
+                    //to write logic block from App.js
                 </div>
+            //     {/*<div className="container">*/}
+            //         {/*/!*<Food />*!/*/}
+            //         {/*/!*<Snake />*!/*/}
+            //         {/*/!*<Buttons />*!/*/}
+            //         {/*<button className="btn btn-start">Start</button>*/}
+            //         {/*<button className="btn btn-start" onClick={this.onReset}>*/}
+            //             {/*Start: {this.props.appState.timer}*/}
+            //         {/*</button>*/}
+            //         {/*<DevTools />*/}
+            //     {/*</div>*/}
             );
          }
 
@@ -46,4 +58,4 @@ import Snake from './components/snake';
 };
 
 const appState = new AppState();
-ReactDOM.render(<TimerView appState={appState} />, document.getElementById('root'));
+ReactDOM.render(<App appState={appState} />, document.getElementById('root'));

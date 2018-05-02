@@ -24,7 +24,7 @@ export default class Square extends React.Component<ISquareProps, any> {
             left: `${left * dimensions.width}%`,
             top: `${top * dimensions.height}px`,
             width: `${dimensions.width}%`
-        }
+        };
         if (speed) {
             style = {
                 ...style,

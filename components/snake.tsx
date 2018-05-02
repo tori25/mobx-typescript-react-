@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { observer } from 'mobx-react'
-import Square from './Square'
-import '../App.css';
+import Square from './square'
+// import '../App.css';
 
 export interface ISquareProps{
     dimensions: any,
