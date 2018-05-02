@@ -11,7 +11,7 @@ interface IFoodProps {
 }
 
 @observer
-export default class Food extends React.Component<IFoodProps, any> {
+export default class Food extends React.Component<IFoodProps, {}> {
     constructor(props: IFoodProps){
         super(props);
     }

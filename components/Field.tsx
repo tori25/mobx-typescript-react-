@@ -5,13 +5,13 @@ interface IFieldProps{
     dimensions: any;
 }
 
-export default class Field extends React.Component<IFieldProps, any> {
+export default class Field extends React.Component<IFieldProps, {}> {
     render() {
-        const { board, square } = this.props.dimensions
+        const { board, square } = this.props.dimensions;
         const style = {
             height: `${board.rows * square.height}px`,
             width: `${board.cols * square.width}%`
-        }
+        };
 
         return (
             <div className="field" style={style}/>

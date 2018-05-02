@@ -25,14 +25,9 @@ export default  class Snake extends React.Component<any, any>{
         this.improveSpeed = this.improveSpeed.bind(this);
     }
 
-    /**
-     * Updates snake's direction
-     * @param {event} event The browser event
-     * @returns {void}
-     */
     changeDirection(event) {
         if (this.didChangeDirection == false) {
-            return
+            return;
         }
 
         const { direction, health, props: { field } } = this;
@@ -49,27 +44,14 @@ export default  class Snake extends React.Component<any, any>{
         }
     }
 
-    /**
-     * Updates snake's health
-     * @param {number} foodType The type of food the snake did eat
-     * @returns {void}
-     */
     didEat(foodType) {
         this.health = SNAKE_DIGESTION_CAUSES[foodType]
     }
 
-    /**
-     * Improves snake's speed
-     * @returns {void}
-     */
     improveSpeed() {
         this.speed *= 0.9
     }
 
-    /**
-     * Triggers an update of snake's position
-     * @returns {void}
-     */
     keepMoving() {
         setTimeout(() => {
             this.didChangeDirection = false;
@@ -81,19 +63,11 @@ export default  class Snake extends React.Component<any, any>{
         }, this.speed)
     }
 
-    /**
-     * Stops the snake
-     * @returns {void}
-     */
     sleep() {
         removeListener(this.changeDirection);
         _state.moving = false
     }
 
-    /**
-     * Starts the snake
-     * @returns {void}
-     */
     wakeUp() {
         this.direction = SNAKE_DIRECTIONS.EAST;
         this.health = SNAKE_HEALTHS.HEALTHY;

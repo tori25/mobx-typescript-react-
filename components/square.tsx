@@ -11,7 +11,7 @@ interface ISquareProps{
 }
 
 @observer
-export default class Square extends React.Component<ISquareProps, any> {
+export default class Square extends React.Component<ISquareProps, {}> {
 
     constructor(props: ISquareProps){
         super(props);

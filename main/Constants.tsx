@@ -55,8 +55,6 @@ export const SNAKE_DIGESTION_CAUSES = {
 
 export const MENU = {
     DEFAULT: 1,
-    SCOREBOARD: 2,
-    HOWTOPLAY: 3,
     LOSTGAME: 4,
     SAVERANK: 5,
     SAVEDRANK: 6

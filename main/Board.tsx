@@ -1,17 +1,14 @@
 import {DISPLAYS} from './Constants';
 
-/** Returns the dimensions to render
- * @returns {object} The object containing dimensions of the board and squares
- */
-
-export const getDimensions = (cols, rows) => {
+export const  getDimensions = () => {
 
     let board = {};
-    const square = {};
+    let square = {};
 
     if (window.innerWidth >= window.innerHeight) {
+
         board.cols = DISPLAYS.LANDSCAPE_COLS;
-      board.rows = DISPLAYS.LANDSCAPE_ROWS;
+        board.rows = DISPLAYS.LANDSCAPE_ROWS;
     }
     else {
         board.cols = DISPLAYS.PORTRAIT_COLS;
